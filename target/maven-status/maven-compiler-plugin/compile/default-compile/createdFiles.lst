@@ -1,0 +1,13 @@
+com\bookStoreAPI\utilsPages\ExtentReportUtil.class
+com\bookStoreAPI\UserServices\BookService.class
+com\bookStoreAPI\basePagesPOJO\BookPojo.class
+com\bookStoreAPI\basePagesPOJO\UserPOJO.class
+com\bookStoreAPI\utility\ConfigReader.class
+com\bookStoreAPI\utilsPages\AllureReportUtil.class
+com\bookStoreAPI\utilsPages\ApiRequestUtil.class
+com\bookStoreAPI\utilsPages\ServerManager.class
+com\bookStoreAPI\utility\ApiConstants.class
+com\bookStoreAPI\UserServices\Login.class
+com\bookStoreAPI\UserServices\SignUp.class
+com\bookStoreAPI\utilsPages\ConfigLoader.class
+com\bookStoreAPI\utilsPages\RestUtil.class

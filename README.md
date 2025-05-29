@@ -150,3 +150,63 @@ Once the job is built, you will see an **Allure Report** link on the left sideba
     - Git Plugin
     - Maven Integration
     - Allure Jenkins Plugin
+
+
+### 📝 Jenkins Pipeline  ######
+
+```groovy
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven 3'
+        jdk 'Java 17'
+    }
+
+    environment {
+        ALLURE_RESULTS_DIR = "target/allure-results"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-username/bookstore-api-test.git'
+            }
+        }
+
+        stage('Install Backend Dependencies') {
+            steps {
+                sh 'pip install -r bookstore-main/requirements.txt'
+            }
+        }
+
+        stage('Start FastAPI Server') {
+            steps {
+                sh '''
+                    cd bookstore-main
+                    nohup uvicorn main:app --port 8000 &
+                '''
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh 'mvn clean test'
+            }
+        }
+
+        stage('Allure Report') {
+            steps {
+                allure includeProperties: false, results: [[path: 'target/allure-results']]
+            }
+        }
+    }
+}
+
+### 🔮 Future Enhancements
+
+- Test parallelization using JUnit 5 or TestNG
+- Dynamic environment and credential management
+- Integration with Swagger/OpenAPI spec validation
+- Docker support for backend and test containers
+- Scheduled nightly runs and Allure history dashboard
