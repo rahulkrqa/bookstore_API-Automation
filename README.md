@@ -152,6 +152,8 @@ Once the job is built, you will see an **Allure Report** link on the left sideba
     - Allure Jenkins Plugin
 
 
+
+
 ### 📝 Jenkins Pipeline  ######
 
 ```groovy
