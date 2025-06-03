@@ -11,7 +11,8 @@ import io.cucumber.junit.CucumberOptions; // Cucumber options
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",           // Feature file location
-        glue = "com.bookstore.stepdefs",                    // Step definitions package
+    //    glue = "com.bookstore.stepdefs",
+        glue = {"com.bookstore.stepdefs", "com.bookstore.hooks"}, // Step definitions and hooks
         plugin = {
                 "pretty",                                       // Console output
                 "html:target/extent-report.html",               // Extent report HTML

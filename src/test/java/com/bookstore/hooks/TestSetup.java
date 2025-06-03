@@ -12,7 +12,7 @@ public class TestSetup {
     public static void globalSetup() {
         ExtentReportUtil.initReport();  // Always initialize Extent report first
         ExtentReportUtil.createTest("FastAPI Server Setup"); // Create an Extent test node
-        AllureReportUtil.logStep("FastAPI Server Setup Initialization"); // Allure step
+//        AllureReportUtil.logStep("FastAPI Server Setup Initialization"); // Allure step
 
         ServerManager.startServer(); // Start the FastAPI server (this will log to both reports)
     }
